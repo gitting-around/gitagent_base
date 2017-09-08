@@ -1,0 +1,14 @@
+<launch>
+	<!-- BEGIN ROBOT1-->
+	<group ns="robot1">
+		<include file="$(find GITagent)/Launch/agent.launch"> </include>
+	</group>
+	<!-- BEGIN ROBOT2-->
+	<group ns="robot2">
+		<include file="$(find GITagent)/Launch/agent.launch"> </include>
+	</group>
+	<!-- BEGIN ROBOT3-->
+	<group ns="robot3">
+		<include file="$(find GITagent)/Launch/agent.launch"> </include>
+	</group>
+</launch>

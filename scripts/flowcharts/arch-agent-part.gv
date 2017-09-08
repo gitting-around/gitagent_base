@@ -1,0 +1,77 @@
+digraph G {
+concentrate = true;
+			subgraph legend{
+			rank = min;
+			label = "legend";
+			Legend [shape=none, margin=0, label = <
+				<table cellspacing="0" cellpadding="0" border="1"><tr><td>Code2flow Legend</td></tr><tr><td>
+				<table cellspacing="0">
+				<tr><td>Regular function</td><td width="50px"></td></tr>
+				<tr><td>Trunk function (nothing calls this)</td><td bgcolor='coral'></td></tr>
+				<tr><td>Leaf function (this calls nothing else)</td><td bgcolor='green'></td></tr>
+				<tr><td>Function call which returns no value</td><td>&#8594;</td></tr>
+				<tr><td>Function call returns some value</td><td><font color='blue'>&#8594;</font></td></tr>
+				</table></td></tr></table>
+				>];}node2 [splines=ortho shape = "rect" style = "rounded,filled" fillcolor = "coral" label = "12: AboutMe_WM.__init__" ];
+node3 [splines=ortho shape = "rect" style = "rounded,filled" fillcolor = "green" label = "33: AboutMe_WM.write_log_file" ];
+node4 [splines=ortho shape = "rect" style = "rounded,filled" fillcolor = "coral" label = "38: AboutMe_WM.energy_loss" ];
+node5 [splines=ortho shape = "rect" style = "rounded,filled" fillcolor = "coral" label = "41: AboutMe_WM.update_pos" ];
+node6 [splines=ortho shape = "rect" style = "rounded,filled" fillcolor = "coral" label = "48: AboutMe_WM.keep_request" ];
+node7 [splines=ortho shape = "rect" style = "rounded" label = "68: AboutMe_WM.dep_delta" ];
+node22 [splines=ortho shape = "rect" style = "rounded,filled" fillcolor = "coral" label = "0: agent.(agent module frame (runs on import))" ];
+node11 [splines=ortho shape = "rect" style = "rounded" label = "29: Agent.__init__" ];
+node12 [splines=ortho shape = "rect" style = "rounded,filled" fillcolor = "green" label = "127: Agent.write_log_file" ];
+node13 [splines=ortho shape = "rect" style = "rounded,filled" fillcolor = "coral" label = "132: Agent.handle_serve" ];
+node14 [splines=ortho shape = "rect" style = "rounded" label = "180: Agent.call_serve" ];
+node15 [splines=ortho shape = "rect" style = "rounded,filled" fillcolor = "coral" label = "234: Agent.callback" ];
+node16 [splines=ortho shape = "rect" style = "rounded,filled" fillcolor = "coral" label = "277: Agent.run_fsm" ];
+node17 [splines=ortho shape = "rect" style = "rounded" label = "318: Agent.wander" ];
+node18 [splines=ortho shape = "rect" style = "rounded" label = "337: Agent.execute" ];
+node19 [splines=ortho shape = "rect" style = "rounded" label = "340: Agent.adapt" ];
+node20 [splines=ortho shape = "rect" style = "rounded,filled" fillcolor = "green" label = "416: Agent.stop" ];
+node21 [splines=ortho shape = "rect" style = "rounded" label = "418: Agent.run_service_step" ];
+node6 -> node3;
+node6 -> node7;
+node7 -> node3;
+node22 -> node11;
+node11 -> node12;
+node13 -> node12;
+node14 -> node12;
+node15 -> node12;
+node16 -> node12;
+node16 -> node17;
+node16 -> node18;
+node16 -> node19;
+node16 -> node20;
+node17 -> node12;
+node18 -> node21;
+node19 -> node12;
+node21 -> node12;
+node21 -> node14 [color="blue" penwidth="2"];
+subgraph clusteraboutme_wm0{
+node2 node3 node4 node5 node6 node7 ;
+label="aboutme_wm";
+style=filled;
+color=black;
+graph[style=dotted];
+subgraph clusterAboutMe_WM1{
+node2 node3 node4 node5 node6 node7 ;
+label="AboutMe_WM";
+style=filled;
+color=black;
+graph[style=dotted];
+}};
+subgraph clusteragent9{
+node22 node11 node12 node13 node14 node15 node16 node17 node18 node19 node20 node21 ;
+label="agent";
+style=filled;
+color=black;
+graph[style=dotted];
+subgraph clusterAgent10{
+node11 node12 node13 node14 node15 node16 node17 node18 node19 node20 node21 ;
+label="Agent";
+style=filled;
+color=black;
+graph[style=dotted];
+}};
+}

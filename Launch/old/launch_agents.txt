@@ -1,0 +1,11 @@
+<launch>
+	<node pkg="GITagent" type="agent.py" name="node_1" output="screen" 
+		launch-prefix="xterm -e">
+	</node>
+	<!-- for th gnome terminal use: "gnome-terminal --command" -->
+
+	<node pkg="GITagent" type="agent.py" name="node_2" output="screen"
+		launch-prefix="xterm -e">
+	</node>
+
+</launch>

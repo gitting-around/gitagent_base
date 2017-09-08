@@ -1,0 +1,12 @@
+<launch>
+	<arg name="id"/>
+	<node pkg="GITagent" type="agent.py" name="brain_node" output="log" launch-prefix="xterm -e">
+		<param name="myID" value="$(arg id)" />
+		<param name="myDelta" value="0.25" />
+		<param name="myDepend" value="50" />
+		<param name="popSize" value="30" />
+		<param name="provaNr" value="1" />
+	</node>	<node pkg="GITagent" type="msg_PUnit.py" name="msg_punit" output="log" launch-prefix="xterm -e">
+		<param name="myID" value="$(arg id)" />
+	</node>
+</launch>
