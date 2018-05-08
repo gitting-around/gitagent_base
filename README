@@ -30,8 +30,9 @@ In order to visualize results as heatmaps, run the following in the folder where
 
 First generate the compressed results files for depend tasks, and dropped tasks.
 
+./handle_results.py 5 0.25 0.0
 
-
+Then to generate heatmaps:
 
 ./handle_results.py filename_for_depend_values depend
 
