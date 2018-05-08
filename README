@@ -1,1 +1,42 @@
-To be provided in a couple of days.
+Instructions on how to run multi-agent simulations.
+
+Modify the following paths in the following files to your preferred destination:
+
+mylogging.py ---> line 5, 7, and 9.
+
+simulation_functions.py ---> line 10.
+
+agent.py  ---> line 624, 628, 643, 651, 657. (these are the files with the final results which will be visualized later)
+
+The following directory structure is assumed:
+
+~/catkin_ws/src/GITagent
+
+To run:
+
+./run.sh
+
+The simulations will run for ten agents.
+
+In order to run the dynamic case, all agents dynamic ---> in line 71, change to if self.ID > 0
+
+In order to run the static variant:
+
+scripts/aboutme_wm.py --> keep as is
+
+In order to run 1 dynamic agent, rest static ---> in line 71, change to if self.ID == 1. Agent with ID one will be dynamic.
+
+In order to visualize results as heatmaps, run the following in the folder where the output results files from the simulation are saved:
+
+First generate the compressed results files for depend tasks, and dropped tasks.
+
+
+
+
+./handle_results.py filename_for_depend_values depend
+
+./handle_results.py filename_for_drop_values drop
+
+In case any more details are needed, send me a message.
+
+
